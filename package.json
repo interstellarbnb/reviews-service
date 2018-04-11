@@ -1,15 +1,21 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
-  "author": "",
+  "name": "InterstellarBnb Reviews Service",
+  "version": "1",
+  "description": "A recreation of Airbnb's reviews module on their items page",
+  "author": "Priya Ghose",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
+    "babel": "^6.23.0",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "mongoose": "^5.0.14",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "request": "^2.85.0"
   },
   "devDependencies": {
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
