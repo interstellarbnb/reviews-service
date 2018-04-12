@@ -1,7 +1,7 @@
 const sampleData = require('./reviewsSampleData.js');
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/Reservations');
+mongoose.connect('mongodb://localhost/reviews');
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -9,7 +9,7 @@ db.once('open', function() {
   // we're connected!
 });
 
-const reviewSchema = mongoose.Schema({
+const listingSchema = mongoose.Schema({
     id: Number,
     reviews: [
         {
@@ -31,15 +31,29 @@ const reviewSchema = mongoose.Schema({
     numberOfReviews: Number,
 });
 
-const Review = mongoose.model('Reservation', reviewSchema);
+const Listing = mongoose.model('Review', listingSchema);
 
-const addReviews = function(reviews) {
-    reviews.forEach(function(review, index) {
-        let newReview = new Review(review);
-        newReview.save(function(err, newReview) {
+const addListings = function(listings) {
+    listings.forEach(function(listing, index) {
+        let newListing = new Listing(listing);
+        newListing.save(function(err, newListing) {
             if (err) return console.log(err);
-        })
-    })
-}
+        });
+    });
+};
 
-addReviews(sampleData.createListings(100));
+const getListings = function(id, cb) {
+    Listing.findOne({'id': id}, function(err, results) {
+        if (err) {
+            return handleError(err);
+        } else {
+            cb(results)
+        }
+    });
+};
+
+addListings(sampleData.createListings(100));
+
+module.exports = {
+    getListings
+}
