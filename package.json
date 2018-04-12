@@ -1,23 +1,33 @@
 {
-  "name": "InterstellarBnb Reviews Service",
-  "version": "1",
-  "description": "A recreation of Airbnb's reviews module on their items page",
-  "author": "Priya Ghose",
-  "license": "",
-  "engines": {
-    "node": ">=6.13.0"
-  },
-  "scripts": {},
+  "name": "Priya",
+  "version": "1.0.0",
+  "description": "Reviews Module for Airbnb",
   "dependencies": {
     "babel": "^6.23.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.10.0",
     "express": "^4.16.3",
+    "faker": "^4.1.0",
     "jquery": "^3.3.1",
     "mongoose": "^5.0.14",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "request": "^2.85.0"
   },
-  "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
-  }
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/interstellarbnb/reviews-service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/interstellarbnb/reviews-service/issues"
+  },
+  "homepage": "https://github.com/interstellarbnb/reviews-service#readme"
 }
