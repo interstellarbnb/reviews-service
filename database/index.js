@@ -1,45 +1,62 @@
+const mongoose = require('mongoose');
 const sampleData = require('./reviewsSampleData.js');
 
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/Reservations');
-
+mongoose.connect('mongodb://localhost/reviews');
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  // we're connected!
+db.once('open', () => {
+  console.log('connected to Mongoose');
 });
 
-const reviewSchema = mongoose.Schema({
-    id: Number,
-    reviews: [
-        {
-            name: String,
-            profilePicture: String,
-            date: {type: Date, default: Date.now()},
-            body: String,
-            stars: {
-                overall: Number,
-                accuracy: Number, 
-                communication: Number, 
-                cleanliness: Number,
-                location: Number, 
-                checkIn: Number, 
-                value: Number
-            }
-        }
-    ],
-    numberOfReviews: Number,
+const listingSchema = mongoose.Schema({
+  id: { type: Number, unique: true },
+  reviews: [
+    {
+      name: String,
+      profilePicture: String,
+      date: { type: Date, default: Date.now() },
+      body: String,
+      stars: {
+        overall: Number,
+        accuracy: Number,
+        communication: Number,
+        cleanliness: Number,
+        location: Number,
+        checkIn: Number,
+        value: Number,
+      },
+    },
+  ],
+  numberOfReviews: Number,
 });
 
-const Review = mongoose.model('Reservation', reviewSchema);
+const Listing = mongoose.model('Review', listingSchema);
 
-const addReviews = function(reviews) {
-    reviews.forEach(function(review, index) {
-        let newReview = new Review(review);
-        newReview.save(function(err, newReview) {
-            if (err) return console.log(err);
-        })
-    })
-}
+const addListings = (listings) => {
+  listings.forEach((listing) => {
+    const newListing = new Listing(listing);
+    newListing.save((err, data) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(`The listing ${data} has been saved`);
+      }
+    });
+  });
+};
 
-addReviews(sampleData.createListings(100));
+const getListings = (id, cb) => {
+  Listing.findOne({ id }, (err, results) => {
+    if (err) {
+      console.log(err);
+    } else {
+      cb(results);
+    }
+  });
+};
+
+addListings(sampleData.createListings(100));
+
+module.exports = {
+  getListings,
+};
