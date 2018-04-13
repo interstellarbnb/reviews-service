@@ -39,7 +39,7 @@ const addListings = (listings) => {
       if (err) {
         console.log(err);
       } else {
-        console.log(`The listing ${data} has been saved`);
+        console.log(`The listing has been saved`);
       }
     });
   });
@@ -55,7 +55,8 @@ const getListings = (id, cb) => {
   });
 };
 
-addListings(sampleData.createListings(100));
+// UNCOMMENT WHEN YOU WANT TO SEED YOUR DB
+// addListings(sampleData.createListings(100));
 
 module.exports = {
   getListings,

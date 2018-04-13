@@ -20,6 +20,7 @@
     "faker": "^4.1.0",
     "jquery": "^3.3.1",
     "mongoose": "^5.0.14",
+    "path": "^0.12.7",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "request": "^2.85.0"
@@ -37,7 +38,8 @@
     "webpack-dev-server": "^3.1.3"
   },
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.js --mode development"
+    "webpack": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "mongod": "mongod",
   },
   "repository": {
     "type": "git",

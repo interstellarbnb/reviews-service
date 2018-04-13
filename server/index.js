@@ -1,11 +1,13 @@
-const dbHelper = require('../database/index.js');
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
+
+const dbHelper = require('../database/index.js');
 
 const app = express();
 
 app.use(bodyParser.json());
-app.use(express.static('../client/public'));
+app.use(express.static(path.join(__dirname, '../client/public')));
 
 app.get('/reviews/:id', ({params}, res) => (
     dbHelper.getListings(params.id, function(results) {
@@ -13,4 +15,4 @@ app.get('/reviews/:id', ({params}, res) => (
     })
 ));
 
-app.listen(3002, () => console.log('Example app listening on port http://localhost:3002'))
+app.listen(3002, () => console.log('Reviews app listening on port http://localhost:3002'))
