@@ -1,4 +1,4 @@
-const webpack = require('webpack');
+require('webpack');
 
 module.exports = {
   entry: [
@@ -10,6 +10,22 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              modules: true,
+              localIdentName: '[local]___[hash:base64:5]',
+            },
+          },
+        ],
       },
     ],
   },
@@ -24,4 +40,5 @@ module.exports = {
   devServer: {
     contentBase: __dirname + '/client/public',
   },
+  watch: true,
 };
