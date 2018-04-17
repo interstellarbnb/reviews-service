@@ -1,5 +1,3 @@
-require('webpack');
-
 module.exports = {
   entry: [
     './client/src/index.js',
@@ -8,24 +6,7 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
         use: ['babel-loader'],
-      },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-              modules: true,
-              localIdentName: '[local]___[hash:base64:5]',
-            },
-          },
-        ],
       },
     ],
   },
