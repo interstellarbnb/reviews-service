@@ -10,7 +10,7 @@ class Stars extends React.Component {
   render() {
 
     const stars = this.props.reviews.map((review) =>
-      <div>
+      <div key={review._id}>
         <li>{review.stars.accuracy}</li>
         <li>{review.stars.cleanliness}</li>
         <li>{review.stars.location}</li>
