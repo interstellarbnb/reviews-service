@@ -1,7 +1,7 @@
 const frisby = require('frisby');
 
-it('should be a teapot', (done) => {
-  frisby.get('http://httpbin.org/status/418')
-    .expect('status', 418)
+it('should return a status of 200', (done) => {
+  frisby.get('http://localhost:3002/reviews/2')
+    .expect('status', 200)
     .done(done);
 });
