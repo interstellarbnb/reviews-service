@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Overview(props) {
   return (
@@ -12,3 +13,8 @@ function Overview(props) {
 }
 
 export default Overview;
+
+Overview.propTypes = {
+  numberOfReviews: PropTypes.number.isRequired,
+  overall: PropTypes.number.isRequired,
+};
