@@ -1,17 +1,14 @@
 import React from 'react';
+import { Grid, Row } from 'react-bootstrap';
 // import PropTypes from 'prop-types';
+// const path = require('path');
 
 import Overview from '../Overview/Overview';
 import Stars from '../Stars/Stars';
 import Reviews from '../Reviews/Reviews';
 import Navigation from '../Navigation/Navigation';
-// const path = require('path');
-import exampleData from '../exampleData'; // moved to current folder for now. Will move to DB folder and use path for join
-/* Ask Henry about how to export/import exampleData so I don't need
-to reference it as exampleData.exampleData;
-*/
+import exampleData from '../exampleData';
 import style from './App.css';
-import { Grid, Row, Col } from 'react-bootstrap';
 
 class App extends React.Component {
   constructor() {

@@ -1,24 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import style from './Navigation.css';
 
-class Navigation extends React.Component {
-  constructor(props) {
-    super(props);
+function Navigation(props) {
+  const pages = [];
+  for (let i = 1; i < (props.numberOfReviews / 7) + 1; i += 1) {
+    pages.push(<button key={i}>{i}</button>);
   }
-
-  render() {
-
-    let pages = [];
-    for (var i = 1; i < (this.props.numberOfReviews / 7) + 1; i++) {
-        pages.push(<button key={i}>{i}</button>);
-    }
-
-    return (
-      <div id="page-nav">
+  return (
+    <div id="page-nav">
       {pages}
-      </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Navigation;
+
+Navigation.propTypes = {
+  numberOfReviews: PropTypes.number.isRequired,
+};

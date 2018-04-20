@@ -1,29 +1,28 @@
 import React from 'react';
-import style from './Stars.css';
 import { Grid, Row, Col } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
-class Stars extends React.Component {
+import style from './Stars.css';
 
-  constructor(props) {
-    super(props);
-  }
+function Stars(props) {
+  const stars = props.reviews.map(review => (
+    <Grid>
+      <Row>
+        <Col>
+        </Col>
+      </Row>
+    </Grid>
+  ));
 
-  render() {
-    const stars = this.props.reviews.map((review) =>
-      <Grid>
-        <Row>
-          <Col>
-          </Col>
-        </Row>
-      </Grid>
-    );
-
-    return (
-        <div>
-          {stars}
-        </div>
-    );
-  }
+  return (
+    <div>
+      {stars}
+    </div>
+  );
 }
 
 export default Stars;
+
+Stars.propTypes = {
+  reviews: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
