@@ -1,4 +1,6 @@
 import React from 'react';
+import style from './Stars.css';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 class Stars extends React.Component {
 
@@ -7,15 +9,13 @@ class Stars extends React.Component {
   }
 
   render() {
-
     const stars = this.props.reviews.map((review) =>
-      <div key={review._id}>
-        <li>{review.stars.accuracy}</li>
-        <li>{review.stars.cleanliness}</li>
-        <li>{review.stars.location}</li>
-        <li>{review.stars.checkIn}</li>
-        <li>{review.stars.value}</li>
-      </div>
+      <Grid>
+        <Row>
+          <Col>
+          </Col>
+        </Row>
+      </Grid>
     );
 
     return (

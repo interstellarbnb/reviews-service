@@ -1,4 +1,5 @@
 import React from 'react';
+import style from './Navigation.css';
 
 class Navigation extends React.Component {
   constructor(props) {

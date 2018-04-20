@@ -10,8 +10,9 @@
   },
   "dependencies": {
     "babel": "^6.23.0",
+    "babel-plugin-transform-object-assign": "^6.22.0",
     "body-parser": "^1.18.2",
-    "bootstrap": "^4.1.0",
+    "bootstrap": "^3.3.7",
     "express": "^4.16.3",
     "faker": "^4.1.0",
     "jquery": "^3.3.1",
@@ -21,7 +22,9 @@
     "popper": "^1.0.1",
     "prop-types": "^15.6.1",
     "react": "^16.3.1",
+    "react-bootstrap": "^0.32.1",
     "react-dom": "^16.3.1",
+    "react-stars": "^2.2.5",
     "request": "^2.85.0",
     "save": "^2.3.2"
   },
@@ -47,7 +50,9 @@
   "scripts": {
     "webpack": "webpack-dev-server --config ./webpack.config.js --mode development --port 8088 --watch",
     "mongod": "mongod",
-    "test": "jest"
+    "test": "jest",
+    "test:watchAll": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",

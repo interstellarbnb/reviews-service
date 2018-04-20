@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import style from './Reviews.css';
 
 class Reviews extends React.Component {
 

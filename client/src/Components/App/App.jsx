@@ -11,6 +11,7 @@ import exampleData from '../exampleData'; // moved to current folder for now. Wi
 to reference it as exampleData.exampleData;
 */
 import style from './App.css';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 class App extends React.Component {
   constructor() {
@@ -25,33 +26,26 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>
+      <Grid className={style.test}>
+        <Row>
           <Overview
             numberOfReviews={this.state.numberOfReviews}
             overall={this.state.overall}
             query={this.state.query}
           />
-        </div>
-        <div>
+        </Row>
+        <Row>
           <Stars reviews={this.state.reviews} />
-        </div>
-        <div>
+        </Row>
+        <Row>
           <Reviews reviews={this.state.reviews} />
-        </div>
-        <div>
+        </Row>
+        <Row>
           <Navigation numberOfReviews={this.state.numberOfReviews} />
-        </div>
-      </div>
+        </Row>
+      </Grid>
     );
   }
 }
 
 export default App;
-
-// App.propTypes = {
-//   numberOfReviews: PropTypes.number,
-//   overall: PropTypes.number,
-//   reviews: PropTypes.array,
-//   query: PropTypes.string,
-// }
