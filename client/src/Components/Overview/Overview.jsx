@@ -8,21 +8,21 @@ import style from './Overview.css';
 function Overview(props) {
   return (
     <Grid>
-      <Row>
-        <Col md={10} id={style.overview}>
+      <Row id={style.overviewGrid}>
+        <Col md={9} id={style.overview}>
           <span id={style.numreviews}>
             {props.numberOfReviews} reviews
           </span>
           <ReactStars
             count={5}
             value={props.overall}
-            size={21}
+            size={23}
             color1="#D8D8D8"
             color2="#008489"
             edit={false}
           />
         </Col>
-        <Col md={2} id={style.search}>
+        <Col md={3} id={style.search}>
           <input type="text" placeholder="Search reviews" onChange={() => console.log('hey')} />
         </Col>
       </Row>

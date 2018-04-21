@@ -1,0 +1,16 @@
+.descriptors {
+  color: #484848;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  margin: 0px;
+  word-wrap: break-word;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: normal;
+  font-weight: 300;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#starsGrid {
+  margin-bottom: 30px;
+}

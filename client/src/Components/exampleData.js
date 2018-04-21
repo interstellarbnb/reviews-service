@@ -4,6 +4,14 @@ const exampleData =
 { _id: '5ad6060fb53af01533643102',
  id: 101,
  numberOfReviews: 4,
+ starsSummary: {
+  overall: 3,
+  accuracy: 5,
+  cleanliness: 5,
+  location: 1,
+  checkIn: 1,
+  value: 1
+ },
  reviews: 
   [ { stars: { overall: 3,
    accuracy: 5,

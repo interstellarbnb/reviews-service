@@ -4,7 +4,7 @@ import { Grid, Row } from 'react-bootstrap';
 // const path = require('path');
 
 import Overview from '../Overview/Overview';
-// import Stars from '../Stars/Stars';
+import Stars from '../Stars/Stars';
 import Reviews from '../Reviews/Reviews';
 import Navigation from '../Navigation/Navigation';
 import { numberOfReviews, reviews } from '../exampleData';
@@ -40,7 +40,7 @@ class App extends React.Component {
           />
         </Row>
         <Row>
-          {/* <Stars reviews={this.state.reviews} /> */}
+          <Stars reviews={this.state.reviews} />
         </Row>
         <Row>
           <Reviews reviews={this.state.reviews} />

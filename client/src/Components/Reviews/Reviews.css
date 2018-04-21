@@ -6,7 +6,21 @@
   word-wrap: break-word;
   font-size: 17px;
   line-height: 22px;
-  letter-spacing: 0.2px;
+  letter-spacing: normal;
+}
+
+.date {
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: normal;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #484848;
+  font-weight: 300;
+  display: inline;
 }
 
 .container {
