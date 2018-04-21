@@ -22,9 +22,9 @@ class App extends React.Component {
     this.handleSearch = this.handleSearch.bind(this);
   }
 
-  handleSearch(query) {
+  handleSearch(event) {
     this.setState({
-      query,
+      query: event.target.value,
     });
   }
 
@@ -43,7 +43,10 @@ class App extends React.Component {
           <Stars reviews={this.state.reviews} />
         </Row>
         <Row>
-          <Reviews reviews={this.state.reviews} />
+          <Reviews 
+            reviews={this.state.reviews}
+            query={this.state.query}
+          />
         </Row>
         <Row>
           <Navigation numberOfReviews={this.state.numberOfReviews} />
