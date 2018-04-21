@@ -11,7 +11,8 @@ function Overview(props) {
       <Row>
         <Col md={10} id={style.overview}>
           <span id={style.numreviews}>
-          {props.numberOfReviews} reviews </span>
+            {props.numberOfReviews} reviews
+          </span>
           <ReactStars
             count={5}
             value={props.overall}
@@ -23,7 +24,7 @@ function Overview(props) {
         </Col>
         <Col md={2} id={style.search}>
           <input type="text" placeholder="Search reviews" onChange={() => console.log('hey')} />
-        </Col> 
+        </Col>
       </Row>
     </Grid>
   );
