@@ -51,4 +51,4 @@ const exampleData =
       body: 'Qui ullam iure perferendis in nulla ipsam et soluta est. Quia sit sint eos ut.' } ],
  __v: 0 }
 
-module.exports.exampleData = exampleData;
+module.exports = exampleData;

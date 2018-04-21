@@ -7,15 +7,15 @@ import Overview from '../Overview/Overview';
 // import Stars from '../Stars/Stars';
 import Reviews from '../Reviews/Reviews';
 import Navigation from '../Navigation/Navigation';
-import { exampleData } from '../exampleData';
+import { numberOfReviews, reviews } from '../exampleData';
 import style from './App.css';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      numberOfReviews: exampleData.numberOfReviews,
-      reviews: exampleData.reviews,
+      numberOfReviews,
+      reviews,
       query: '',
       overall: 5,
     };
