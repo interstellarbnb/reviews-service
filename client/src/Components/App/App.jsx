@@ -4,35 +4,43 @@ import { Grid, Row } from 'react-bootstrap';
 // const path = require('path');
 
 import Overview from '../Overview/Overview';
-import Stars from '../Stars/Stars';
+// import Stars from '../Stars/Stars';
 import Reviews from '../Reviews/Reviews';
 import Navigation from '../Navigation/Navigation';
-import exampleData from '../exampleData';
+import { exampleData } from '../exampleData';
 import style from './App.css';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      numberOfReviews: exampleData.exampleData.numberOfReviews,
-      reviews: exampleData.exampleData.reviews,
-      query: 'bedroom',
+      numberOfReviews: exampleData.numberOfReviews,
+      reviews: exampleData.reviews,
+      query: '',
       overall: 5,
     };
+    this.handleSearch = this.handleSearch.bind(this);
+  }
+
+  handleSearch(query) {
+    this.setState({
+      query,
+    });
   }
 
   render() {
     return (
-      <Grid className={style.test}>
+      <Grid id={style.component}>
         <Row>
           <Overview
             numberOfReviews={this.state.numberOfReviews}
             overall={this.state.overall}
             query={this.state.query}
+            handleSearch={this.handleSearch}
           />
         </Row>
         <Row>
-          <Stars reviews={this.state.reviews} />
+          {/* <Stars reviews={this.state.reviews} /> */}
         </Row>
         <Row>
           <Reviews reviews={this.state.reviews} />
