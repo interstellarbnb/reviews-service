@@ -11,12 +11,12 @@ const exampleData =
    location: 1,
    checkIn: 1,
    value: 1 },
-      date: '2018-04-17T14:34:55.306Z',
-      _id: '5ad6060fb53af01533643106',
-      name: 'Emerald Bernier',
-      profilePicture: 'https://s3.amazonaws.com/uifaces/faces/twitter/victorerixon/128.jpg',
-      body: 'Rem iure mollitia nemo exercitationem magni tenetur eligendi. Cupiditate veritatis suscipit sit error sit velit et fuga non.' },
-    { stars: { overall: 4,
+  date: '2018-04-17T14:34:55.306Z',
+  _id: '5ad6060fb53af01533643106',
+  name: 'Emerald Bernier',
+  profilePicture: 'https://s3.amazonaws.com/uifaces/faces/twitter/victorerixon/128.jpg',
+  body: 'Rem iure mollitia nemo exercitationem magni tenetur eligendi. Cupiditate veritatis suscipit sit error sit velit et fuga non.' },
+  { stars: { overall: 4,
   accuracy: 4,
   cleanliness: 4,
   location: 4,
@@ -51,4 +51,4 @@ const exampleData =
       body: 'Qui ullam iure perferendis in nulla ipsam et soluta est. Quia sit sint eos ut.' } ],
  __v: 0 }
 
-module.exports.exampleData = exampleData;
+module.exports = exampleData;

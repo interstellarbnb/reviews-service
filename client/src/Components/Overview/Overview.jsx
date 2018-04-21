@@ -9,8 +9,10 @@ function Overview(props) {
   return (
     <Grid>
       <Row>
-        <Col md={3} id={style.numreviews}>
-          {props.numberOfReviews} reviews
+        <Col md={10} id={style.overview}>
+          <span id={style.numreviews}>
+            {props.numberOfReviews} reviews
+          </span>
           <ReactStars
             count={5}
             value={props.overall}
@@ -20,8 +22,8 @@ function Overview(props) {
             edit={false}
           />
         </Col>
-        <Col md={6}>
-          <input value="Search reviews" />
+        <Col md={2} id={style.search}>
+          <input type="text" placeholder="Search reviews" onChange={() => console.log('hey')} />
         </Col>
       </Row>
     </Grid>
