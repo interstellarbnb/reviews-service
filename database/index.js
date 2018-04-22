@@ -10,6 +10,14 @@ db.once('open', () => {
 
 const listingSchema = mongoose.Schema({
   id: { type: Number, unique: true },
+  starsSummary: {
+    overall: Number,
+    accuracy: Number,
+    cleanliness: Number,
+    location: Number,
+    checkIn: Number,
+    value: Number,
+  },
   reviews: [
     {
       name: String,
