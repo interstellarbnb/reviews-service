@@ -7,6 +7,15 @@ const createListings = (numberOfEntries, startingId = 1) => {
     const listing = {
       id: i,
       numberOfReviews,
+      starsSummary: {
+        overall: Math.ceil(Math.random() * 5),
+        accuracy: Math.ceil(Math.random() * 5),
+        cleanliness: Math.ceil(Math.random() * 5),
+        location: Math.ceil(Math.random() * 5),
+        checkIn: Math.ceil(Math.random() * 5),
+        value: Math.ceil(Math.random() * 5),
+        communication: Math.ceil(Math.random() * 5),
+      },
     };
     const listingReviews = [];
     for (let j = 0; j < numberOfReviews; j += 1) {

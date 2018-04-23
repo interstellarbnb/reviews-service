@@ -23,7 +23,7 @@ function Overview(props) {
           />
         </Col>
         <Col md={3} id={style.search}>
-          <input type="text" placeholder="Search reviews" onChange={() => console.log('hey')} />
+          <input type="text" placeholder="Search reviews" onChange={(event) => props.handleSearch(event)} />
         </Col>
       </Row>
     </Grid>
