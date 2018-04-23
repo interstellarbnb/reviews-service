@@ -1,8 +1,6 @@
 import React from 'react';
 import { Grid, Row } from 'react-bootstrap';
-import $ from 'jquery';
-// import PropTypes from 'prop-types';
-// const path = require('path');
+import axios from 'axios';
 
 import Overview from '../Overview/Overview';
 import Stars from '../Stars/Stars';
@@ -30,25 +28,23 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const self = this;
-    $.ajax({
-      type: 'GET',
-      url: '/reviews/1',
-      success(data) {
-        console.log(data)
-        self.setState({
+    axios.get('/reviews/1')
+      .then(({ data, data: { starsSummary } }) => {
+        this.setState({
           numberOfReviews: data.numberOfReviews,
           reviews: data.reviews,
-          overall: data.starsSummary.overall,
-          accuracy: data.starsSummary.accuracy,
-          cleanliness: data.starsSummary.cleanliness,
-          location: data.starsSummary.location,
-          checkIn: data.starsSummary.checkIn,
-          value: data.starsSummary.value,
-          communication: data.starsSummary.communication,
+          overall: starsSummary.overall,
+          accuracy: starsSummary.accuracy,
+          cleanliness: starsSummary.cleanliness,
+          location: starsSummary.location,
+          checkIn: starsSummary.checkIn,
+          value: starsSummary.value,
+          communication: starsSummary.communication,
         });
-      },
-    });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   handleSearch(event) {
@@ -69,10 +65,10 @@ class App extends React.Component {
           />
         </Row>
         <Row>
-          <Stars 
-            reviews={this.state.reviews} 
-            accuracy={this.state.accuracy} 
-            cleanliness={this.state.cleanliness} 
+          <Stars
+            reviews={this.state.reviews}
+            accuracy={this.state.accuracy}
+            cleanliness={this.state.cleanliness}
             location={this.state.location}
             checkIn={this.state.checkIn}
             value={this.state.value}
