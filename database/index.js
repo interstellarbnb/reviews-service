@@ -10,6 +10,15 @@ db.once('open', () => {
 
 const listingSchema = mongoose.Schema({
   id: { type: Number, unique: true },
+  starsSummary: {
+    overall: Number,
+    accuracy: Number,
+    cleanliness: Number,
+    location: Number,
+    checkIn: Number,
+    value: Number,
+    communication: Number,
+  },
   reviews: [
     {
       name: String,
@@ -56,8 +65,8 @@ const getListings = (id, cb) => {
 };
 
 // UNCOMMENT WHEN YOU WANT TO SEED YOUR DB
-// addListings(sampleData.createListings(100));
-addListings(sampleData.createListings(1, 102));
+addListings(sampleData.createListings(100));
+// addListings(sampleData.createListings(1, 102));
 
 module.exports = {
   getListings,
