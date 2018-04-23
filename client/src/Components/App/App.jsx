@@ -28,6 +28,19 @@ class App extends React.Component {
     });
   }
 
+  // componentDidMount() {
+  //   // get request to server. Grab data from database
+  //   $.ajax({
+  //     type: "GET",
+  //     url: '/',
+  //     data: data,
+  //     success: success,
+  //     dataType: dataType
+  //   });
+  //   // update state
+
+  // }
+
   render() {
     return (
       <Grid id={style.component}>
