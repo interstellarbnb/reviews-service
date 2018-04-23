@@ -28,20 +28,18 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const self = this;
-
     axios.get('/reviews/1')
-      .then(({data}) => {
-        self.setState({
+      .then(({ data, data: { starsSummary } }) => {
+        this.setState({
           numberOfReviews: data.numberOfReviews,
           reviews: data.reviews,
-          overall: data.starsSummary.overall,
-          accuracy: data.starsSummary.accuracy,
-          cleanliness: data.starsSummary.cleanliness,
-          location: data.starsSummary.location,
-          checkIn: data.starsSummary.checkIn,
-          value: data.starsSummary.value,
-          communication: data.starsSummary.communication,
+          overall: starsSummary.overall,
+          accuracy: starsSummary.accuracy,
+          cleanliness: starsSummary.cleanliness,
+          location: starsSummary.location,
+          checkIn: starsSummary.checkIn,
+          value: starsSummary.value,
+          communication: starsSummary.communication,
         });
       })
       .catch((error) => {
