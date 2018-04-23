@@ -1,8 +1,6 @@
 import React from 'react';
 import { Grid, Row } from 'react-bootstrap';
-import $ from 'jquery';
-// import PropTypes from 'prop-types';
-// const path = require('path');
+import axios from 'axios';
 
 import Overview from '../Overview/Overview';
 import Stars from '../Stars/Stars';
@@ -31,11 +29,9 @@ class App extends React.Component {
 
   componentDidMount() {
     const self = this;
-    $.ajax({
-      type: 'GET',
-      url: '/reviews/1',
-      success(data) {
-        console.log(data)
+
+    axios.get('/reviews/1')
+      .then(({data}) => {
         self.setState({
           numberOfReviews: data.numberOfReviews,
           reviews: data.reviews,
@@ -47,8 +43,10 @@ class App extends React.Component {
           value: data.starsSummary.value,
           communication: data.starsSummary.communication,
         });
-      },
-    });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   handleSearch(event) {
@@ -69,10 +67,10 @@ class App extends React.Component {
           />
         </Row>
         <Row>
-          <Stars 
-            reviews={this.state.reviews} 
-            accuracy={this.state.accuracy} 
-            cleanliness={this.state.cleanliness} 
+          <Stars
+            reviews={this.state.reviews}
+            accuracy={this.state.accuracy}
+            cleanliness={this.state.cleanliness}
             location={this.state.location}
             checkIn={this.state.checkIn}
             value={this.state.value}
