@@ -1,7 +1,8 @@
+const path = require('path');
+const bundlePath = path.join(__dirname, './client/public');
+
 module.exports = {
-  entry: [
-    './client/src/index.jsx',
-  ],
+  entry: [path.join(__dirname, './client/src/index.jsx')],
   module: {
     rules: [
       {
@@ -29,12 +30,9 @@ module.exports = {
     extensions: ['*', '.js', '.jsx'],
   },
   output: {
-    path: __dirname + '/client/public',
+    path: path.join(__dirname, '/client/public'),
     publicPath: '/',
     filename: 'bundle.js',
-  },
-  devServer: {
-    contentBase: __dirname + '/client/public',
   },
   watch: true,
 };

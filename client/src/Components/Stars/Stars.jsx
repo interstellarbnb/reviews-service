@@ -15,7 +15,7 @@ function Stars(props) {
         <Col md={3}>
           <ReactStars
             count={5}
-            value={4.5}
+            value={props.accuracy}
             size={18}
             color1="#D8D8D8"
             color2="#008489"
@@ -28,7 +28,7 @@ function Stars(props) {
         <Col md={3}>
           <ReactStars
               count={5}
-              value={4.5}
+              value={props.location}
               size={18}
               color1="#D8D8D8"
               color2="#008489"
@@ -43,7 +43,7 @@ function Stars(props) {
         <Col md={3}>
           <ReactStars
             count={5}
-            value={4.5}
+            value={props.communication}
             size={18}
             color1="#D8D8D8"
             color2="#008489"
@@ -56,7 +56,7 @@ function Stars(props) {
         <Col md={3}>
           <ReactStars
               count={5}
-              value={4.5}
+              value={props.checkIn}
               size={18}
               color1="#D8D8D8"
               color2="#008489"
@@ -71,7 +71,7 @@ function Stars(props) {
         <Col md={3}>
           <ReactStars
             count={5}
-            value={4.5}
+            value={props.cleanliness}
             size={18}
             color1="#D8D8D8"
             color2="#008489"
@@ -84,7 +84,7 @@ function Stars(props) {
         <Col md={3}>
           <ReactStars
               count={5}
-              value={4.5}
+              value={props.value}
               size={18}
               color1="#D8D8D8"
               color2="#008489"

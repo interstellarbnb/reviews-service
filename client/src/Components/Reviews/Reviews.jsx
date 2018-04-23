@@ -15,7 +15,9 @@ class Reviews extends React.Component {
   }
 
   render() {
-    const reviews = this.props.reviews.map(review => (
+
+    const queriedReviews = this.props.reviews.filter(review => review.body.includes(this.props.query));
+    const renderedReviews = queriedReviews.map(review => (
       <Grid className={style.container}>
         <Row>
           <Col md={1}>
@@ -45,7 +47,7 @@ class Reviews extends React.Component {
 
     return (
       <div>
-        {reviews}
+        {renderedReviews}
       </div>
     );
   }
@@ -55,4 +57,5 @@ export default Reviews;
 
 Reviews.propTypes = {
   reviews: PropTypes.arrayOf(PropTypes.object).isRequired,
+  query: PropTypes.string.isRequired,
 };
