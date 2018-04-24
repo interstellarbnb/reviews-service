@@ -8,5 +8,5 @@ import App from './Components/App/App';
 
 ReactDOM.render(
   <App />,
-  document.getElementById('app'),
+  document.getElementById('review'),
 );
