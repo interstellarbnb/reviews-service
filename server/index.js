@@ -16,3 +16,6 @@ app.get('/reviews/:id', ({ params }, res) => (
 ));
 
 app.listen(3002, () => console.log('Reviews app listening on port http://localhost:3002'));
+
+// if I add a post request to post a review, I will need to re-calculate the summary star ratings.
+// Danny suggested the easiest way to do that is ((avg * n) + new / n + 1)
