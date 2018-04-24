@@ -1,5 +1,6 @@
 node_modules
 scratchwork
+client/public/bundle.js
 
 # OS generated files #
 ######################
