@@ -35,7 +35,6 @@ class App extends React.Component {
       type: 'GET',
       url: '/reviews/1',
       success(data) {
-        console.log(data)
         self.setState({
           numberOfReviews: data.numberOfReviews,
           reviews: data.reviews,
@@ -69,10 +68,10 @@ class App extends React.Component {
           />
         </Row>
         <Row>
-          <Stars 
-            reviews={this.state.reviews} 
-            accuracy={this.state.accuracy} 
-            cleanliness={this.state.cleanliness} 
+          <Stars
+            reviews={this.state.reviews}
+            accuracy={this.state.accuracy}
+            cleanliness={this.state.cleanliness}
             location={this.state.location}
             checkIn={this.state.checkIn}
             value={this.state.value}
