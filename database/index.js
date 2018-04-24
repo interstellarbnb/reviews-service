@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const sampleData = require('./reviewsSampleData.js');
 
 mongoose.connect('mongodb://localhost/reviews');
 const db = mongoose.connection;
@@ -47,8 +46,6 @@ const addListings = (listings) => {
     newListing.save((err, data) => {
       if (err) {
         console.log(err);
-      } else {
-        console.log('The listing has been saved');
       }
     });
   });
@@ -64,10 +61,7 @@ const getListings = (id, cb) => {
   });
 };
 
-// UNCOMMENT WHEN YOU WANT TO SEED YOUR DB
-addListings(sampleData.createListings(100));
-// addListings(sampleData.createListings(1, 102));
-
 module.exports = {
   getListings,
+  addListings,
 };
