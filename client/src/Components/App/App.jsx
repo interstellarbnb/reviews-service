@@ -56,7 +56,7 @@ class App extends React.Component {
   render() {
     return (
       <Grid id={style.component}>
-        <Col md={6} mdPush={3}>
+        <Col md={8} mdPush={2}>
         <Row>
           <Overview
             numberOfReviews={this.state.numberOfReviews}
