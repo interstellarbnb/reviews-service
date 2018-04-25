@@ -7,7 +7,7 @@ import style from './Overview.css';
 
 function Overview(props) {
   return (
-    <Grid>
+    <div>
       <Row id={style.overviewGrid}>
         <Col md={9} id={style.overview}>
           <span id={style.numreviews}>
@@ -26,7 +26,7 @@ function Overview(props) {
           <input type="text" placeholder="Search reviews" onChange={(event) => props.handleSearch(event)} />
         </Col>
       </Row>
-    </Grid>
+    </div>
   );
 }
 

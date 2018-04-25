@@ -18,7 +18,7 @@ class Reviews extends React.Component {
 
     const queriedReviews = this.props.reviews.filter(review => review.body.includes(this.props.query));
     const renderedReviews = queriedReviews.map(review => (
-      <Grid className={style.container}>
+      <div className={style.container}>
         <Row>
           <Col md={1}>
             <img src={review.profilePicture} className={style.profilePic} alt="" />
@@ -39,10 +39,10 @@ class Reviews extends React.Component {
           />
         </Row>
         <Row>
-          <span className={style.review}> {review.body} </span>
+          <div className={style.review}> {review.body} </div>
         </Row>
         <hr />
-      </Grid>
+      </div>
     ));
 
     return (
