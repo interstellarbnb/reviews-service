@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Row } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
 
 import Overview from '../Overview/Overview';
@@ -56,6 +56,7 @@ class App extends React.Component {
   render() {
     return (
       <Grid id={style.component}>
+        <Col md={6} mdPush={3}>
         <Row>
           <Overview
             numberOfReviews={this.state.numberOfReviews}
@@ -84,6 +85,7 @@ class App extends React.Component {
         <Row>
           <Navigation numberOfReviews={this.state.numberOfReviews} />
         </Row>
+        </Col>
       </Grid>
     );
   }

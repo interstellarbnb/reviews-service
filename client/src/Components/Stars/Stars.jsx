@@ -7,7 +7,7 @@ import style from './Stars.css';
 
 function Stars(props) {
   return (
-    <Grid id={style.starsGrid}>
+    <div id={style.starsGrid}>
       <Row>
         <Col md={3}>
           <span className={style.descriptors}>Accuracy</span>
@@ -92,7 +92,7 @@ function Stars(props) {
               />
         </Col>
       </Row>
-    </Grid>
+    </div>
   );
 }
 
