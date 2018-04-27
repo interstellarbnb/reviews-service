@@ -28,7 +28,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3002/reviews/1')
+    axios.get(`${window.location.href}reviews/1`)
       .then(({ data, data: { starsSummary } }) => {
         this.setState({
           numberOfReviews: data.numberOfReviews,

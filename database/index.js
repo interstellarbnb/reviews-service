@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/reviews');
+// ADDRESS WHEN DEPLOYING ON LAPTOP: mongodb://localhost/reviews 
+mongoose.connect('mongodb://database/reviews');
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
@@ -40,7 +41,7 @@ const listingSchema = mongoose.Schema({
 
 const Listing = mongoose.model('Review', listingSchema);
 
-const addListings = (listings) => {
+const addListings = (listings, cb) => {
   listings.forEach((listing) => {
     const newListing = new Listing(listing);
     newListing.save((err, data) => {
@@ -49,6 +50,7 @@ const addListings = (listings) => {
       }
     });
   });
+  cb();
 };
 
 const getListings = (id, cb) => {
