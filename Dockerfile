@@ -8,6 +8,8 @@ COPY . /src/app
 
 RUN npm install
 
+RUN npm run webpack
+
 EXPOSE 80
 
 CMD [ "npm", "run", "startdev" ]
