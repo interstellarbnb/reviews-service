@@ -11,9 +11,9 @@ console.log('server is running');
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '../client/public')));
+app.use('/:id', express.static(path.join(__dirname, '../client/public')));
 
-app.get('/reviews/:id', ({ params }, res) => (
+app.get('/:id/reviews', ({ params }, res) => (
   dbHelper.getListings(params.id, (results) => {
     res.send(results);
   })
