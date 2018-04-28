@@ -17,5 +17,8 @@ app.get('/:id/reviews', ({ params }, res) => (
   })
 ));
 
+// Use for deployment on Docker
 // app.listen(80, () => console.log('Reviews app listening on port http://localhost:80'));
+
+// Use for local testing
 app.listen(3002, () => console.log('Reviews app listening on port http://localhost:3002'));

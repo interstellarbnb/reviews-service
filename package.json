@@ -55,7 +55,7 @@
     "startdev": "node database/seed.js & node server/index.js",
     "server": "nodemon server/index.js",
     "webpack": "webpack --config ./webpack.config.js --mode production",
-    "webpack:dev": "webpack --config ./webpack.config.js --mode development",
+    "webpack:dev": "webpack --config ./webpack.config.js --mode development --watch",
     "mongod": "mongod",
     "test": "jest",
     "test:watchAll": "jest --watch",
