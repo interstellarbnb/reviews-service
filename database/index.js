@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 // Use when running database locally
-mongoose.connect('mongodb://localhost/reviews');
+// mongoose.connect('mongodb://localhost/reviews');
 
 // Use when running database in Docker
-// mongoose.connect('mongodb://database/reviews');
+mongoose.connect('mongodb://database/reviews');
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {

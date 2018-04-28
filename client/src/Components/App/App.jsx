@@ -30,11 +30,11 @@ class App extends React.Component {
   componentDidMount() {
     const id = window.location.pathname.split('/')[1];
 
-    // Use this EC2 link during deployment
-    // axios.get(`http://ec2-18-217-72-127.us-east-2.compute.amazonaws.com/${id}/reviews/`)
-
     // Use this localhost link if running component locally
-    axios.get(`http://localhost:3002/${id}/reviews/`)
+    // axios.get(`http://localhost:3002/${id}/reviews/`)
+
+    // Use this EC2 link during deployment
+    axios.get(`http://ec2-18-217-72-127.us-east-2.compute.amazonaws.com/${id}/reviews/`)
       .then(({ data, data: { starsSummary } }) => {
         this.setState({
           numberOfReviews: data.numberOfReviews,
