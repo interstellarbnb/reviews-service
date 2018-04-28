@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import ReactStars from 'react-stars';
 import style from './Reviews.css';
 
@@ -15,8 +15,8 @@ class Reviews extends React.Component {
   }
 
   render() {
-
-    const queriedReviews = this.props.reviews.filter(review => review.body.includes(this.props.query));
+    const queriedReviews = this.props.reviews.filter(review =>
+      review.body.includes(this.props.query));
     const renderedReviews = queriedReviews.map(review => (
       <div className={style.container}>
         <Row>

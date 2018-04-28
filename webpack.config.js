@@ -1,5 +1,4 @@
 const path = require('path');
-const bundlePath = path.join(__dirname, './client/public');
 
 module.exports = {
   entry: [path.join(__dirname, './client/src/index.jsx')],

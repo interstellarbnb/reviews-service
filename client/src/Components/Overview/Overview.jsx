@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import ReactStars from 'react-stars';
 
 import style from './Overview.css';
@@ -23,7 +23,7 @@ function Overview(props) {
           />
         </Col>
         <Col md={3} id={style.search}>
-          <input type="text" placeholder="Search reviews" onChange={(event) => props.handleSearch(event)} />
+          <input type="text" placeholder="Search reviews" onChange={event => props.handleSearch(event)} />
         </Col>
       </Row>
     </div>
@@ -35,4 +35,5 @@ export default Overview;
 Overview.propTypes = {
   numberOfReviews: PropTypes.number.isRequired,
   overall: PropTypes.number.isRequired,
+  handleSearch: PropTypes.func.isRequired,
 };

@@ -28,7 +28,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`reviews/`)
+    const id = window.location.pathname.split('/')[1];
+    axios.get(`http://ec2-18-217-72-127.us-east-2.compute.amazonaws.com/${id}/reviews/`)
       .then(({ data, data: { starsSummary } }) => {
         this.setState({
           numberOfReviews: data.numberOfReviews,
@@ -57,34 +58,34 @@ class App extends React.Component {
     return (
       <Grid id={style.component}>
         <Col md={7} mdPush={0}>
-        <Row>
-          <Overview
-            numberOfReviews={this.state.numberOfReviews}
-            overall={this.state.overall}
-            query={this.state.query}
-            handleSearch={this.handleSearch}
-          />
-        </Row>
-        <Row>
-          <Stars
-            reviews={this.state.reviews}
-            accuracy={this.state.accuracy}
-            cleanliness={this.state.cleanliness}
-            location={this.state.location}
-            checkIn={this.state.checkIn}
-            value={this.state.value}
-            communication={this.state.communication}
-          />
-        </Row>
-        <Row>
-          <Reviews
-            reviews={this.state.reviews}
-            query={this.state.query}
-          />
-        </Row>
-        <Row>
-          <Navigation numberOfReviews={this.state.numberOfReviews} />
-        </Row>
+          <Row>
+            <Overview
+              numberOfReviews={this.state.numberOfReviews}
+              overall={this.state.overall}
+              query={this.state.query}
+              handleSearch={this.handleSearch}
+            />
+          </Row>
+          <Row>
+            <Stars
+              reviews={this.state.reviews}
+              accuracy={this.state.accuracy}
+              cleanliness={this.state.cleanliness}
+              location={this.state.location}
+              checkIn={this.state.checkIn}
+              value={this.state.value}
+              communication={this.state.communication}
+            />
+          </Row>
+          <Row>
+            <Reviews
+              reviews={this.state.reviews}
+              query={this.state.query}
+            />
+          </Row>
+          <Row>
+            <Navigation numberOfReviews={this.state.numberOfReviews} />
+          </Row>
         </Col>
       </Grid>
     );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import ReactStars from 'react-stars';
 
@@ -20,20 +20,20 @@ function Stars(props) {
             color1="#D8D8D8"
             color2="#008489"
             edit={false}
-            />
+          />
         </Col>
         <Col md={3}>
           <span className={style.descriptors}>Location</span>
         </Col>
         <Col md={3}>
           <ReactStars
-              count={5}
-              value={props.location}
-              size={18}
-              color1="#D8D8D8"
-              color2="#008489"
-              edit={false}
-              />
+            count={5}
+            value={props.location}
+            size={18}
+            color1="#D8D8D8"
+            color2="#008489"
+            edit={false}
+          />
         </Col>
       </Row>
       <Row>
@@ -48,20 +48,20 @@ function Stars(props) {
             color1="#D8D8D8"
             color2="#008489"
             edit={false}
-            />
+          />
         </Col>
         <Col md={3}>
           <span className={style.descriptors}>Check In</span>
         </Col>
         <Col md={3}>
           <ReactStars
-              count={5}
-              value={props.checkIn}
-              size={18}
-              color1="#D8D8D8"
-              color2="#008489"
-              edit={false}
-              />
+            count={5}
+            value={props.checkIn}
+            size={18}
+            color1="#D8D8D8"
+            color2="#008489"
+            edit={false}
+          />
         </Col>
       </Row>
       <Row>
@@ -76,20 +76,20 @@ function Stars(props) {
             color1="#D8D8D8"
             color2="#008489"
             edit={false}
-            />
+          />
         </Col>
         <Col md={3}>
           <span className={style.descriptors}>Value</span>
         </Col>
         <Col md={3}>
           <ReactStars
-              count={5}
-              value={props.value}
-              size={18}
-              color1="#D8D8D8"
-              color2="#008489"
-              edit={false}
-              />
+            count={5}
+            value={props.value}
+            size={18}
+            color1="#D8D8D8"
+            color2="#008489"
+            edit={false}
+          />
         </Col>
       </Row>
     </div>
@@ -99,5 +99,10 @@ function Stars(props) {
 export default Stars;
 
 Stars.propTypes = {
-  reviews: PropTypes.arrayOf(PropTypes.object).isRequired,
+  accuracy: PropTypes.number.isRequired,
+  location: PropTypes.number.isRequired,
+  communication: PropTypes.number.isRequired,
+  checkIn: PropTypes.number.isRequired,
+  cleanliness: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
 };

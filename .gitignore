@@ -1,6 +1,7 @@
 node_modules
 scratchwork
 client/public/bundle.js
+npm-debug.log
 
 # OS generated files #
 ######################
