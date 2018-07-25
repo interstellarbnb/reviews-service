@@ -7,12 +7,6 @@ import style from './Reviews.css';
 const moment = require('moment');
 
 class Reviews extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-  }
 
   render() {
     const queriedReviews = this.props.reviews.filter(review =>
